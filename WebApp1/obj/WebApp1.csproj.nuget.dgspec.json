@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC_1\\Documents\\CIDM4390\\IdentityWeb\\WebApp1\\WebApp1.csproj": {}
+    "C:\\Users\\Coding Machine\\Documents\\CIDM4390_Sprint_3\\WebApp1\\WebApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC_1\\Documents\\CIDM4390\\IdentityWeb\\WebApp1\\WebApp1.csproj": {
+    "C:\\Users\\Coding Machine\\Documents\\CIDM4390_Sprint_3\\WebApp1\\WebApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC_1\\Documents\\CIDM4390\\IdentityWeb\\WebApp1\\WebApp1.csproj",
+        "projectUniqueName": "C:\\Users\\Coding Machine\\Documents\\CIDM4390_Sprint_3\\WebApp1\\WebApp1.csproj",
         "projectName": "WebApp1",
-        "projectPath": "C:\\Users\\PC_1\\Documents\\CIDM4390\\IdentityWeb\\WebApp1\\WebApp1.csproj",
-        "packagesPath": "C:\\Users\\PC_1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC_1\\Documents\\CIDM4390\\IdentityWeb\\WebApp1\\obj\\",
+        "projectPath": "C:\\Users\\Coding Machine\\Documents\\CIDM4390_Sprint_3\\WebApp1\\WebApp1.csproj",
+        "packagesPath": "C:\\Users\\Coding Machine\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Coding Machine\\Documents\\CIDM4390_Sprint_3\\WebApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC_1\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Coding Machine\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -40,39 +40,47 @@
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.3, )"
+              "version": "[5.0.4, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.3, )"
+              "version": "[5.0.4, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[5.0.3, )"
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.3, )"
+              "version": "[5.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.3, )"
+              "version": "[5.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[5.0.3, )"
+              "version": "[5.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.3, )"
+              "version": "[5.0.4, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.22.0, )"
             }
           },
           "imports": [
@@ -93,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
