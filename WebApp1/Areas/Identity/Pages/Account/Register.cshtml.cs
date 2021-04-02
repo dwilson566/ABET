@@ -23,18 +23,21 @@ namespace WebApp1.Areas.Identity.Pages.Account
         private readonly SignInManager<WebApp1User> _signInManager;
         private readonly UserManager<WebApp1User> _userManager;
         private readonly ILogger<RegisterModel> _logger;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
             UserManager<WebApp1User> userManager,
             SignInManager<WebApp1User> signInManager,
             ILogger<RegisterModel> logger,
+            RoleManager<IdentityRole> roleManager,
             IEmailSender emailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _roleManager = roleManager;
         }
 
         [BindProperty]
@@ -48,13 +51,19 @@ namespace WebApp1.Areas.Identity.Pages.Account
         {
             [Required]
 			[DataType(DataType.Text)]
-			[Display(Name = "Full name")]
-			public string Name { get; set; }
+			[Display(Name = "First Name")]
+			public string FirstName { get; set; }
+
+            [Required]
+			[DataType(DataType.Text)]
+			[Display(Name = "Last Name")]
+			public string LastName { get; set; }
 
 			[Required]
 			[Display(Name = "Birth Date")]
 			[DataType(DataType.Date)]
 			public DateTime DOB { get; set; }
+
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -84,13 +93,12 @@ namespace WebApp1.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new WebApp1User
-                { 
-                   Name = Input.Name,
-				   DOB = Input.DOB,
-					UserName = Input.Email,
-					Email = Input.Email
-                 };
+                var user = new WebApp1User {
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName,
+                    DOB = Input.DOB,
+                    UserName = Input.Email,
+                    Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

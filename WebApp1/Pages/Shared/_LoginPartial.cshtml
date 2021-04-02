@@ -1,12 +1,13 @@
 @using Microsoft.AspNetCore.Identity
-@inject SignInManager<WebApp1.Areas.Identity.Data.WebApp1User> SignInManager
-@inject UserManager<WebApp1.Areas.Identity.Data.WebApp1User> UserManager
+@using WebApp1.Areas.Identity.Data
+@inject SignInManager<WebApp1User> SignInManager
+@inject UserManager<WebApp1User> UserManager
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserAsync(User).Result.FirstName!</a>
     </li>
     <li class="nav-item">
         <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post" >
