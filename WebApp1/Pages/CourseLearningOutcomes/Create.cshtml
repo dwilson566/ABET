@@ -1,0 +1,69 @@
+@page
+@model WebApp1.Pages.CourseLearningOutcomes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CourseLearningOutcome</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CourseLearningOutcome.Course" class="control-label"></label>
+                <input asp-for="CourseLearningOutcome.Course" class="form-control" />
+                <span asp-validation-for="CourseLearningOutcome.Course" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseLearningOutcome.Instructor" class="control-label"></label>
+                <input asp-for="CourseLearningOutcome.Instructor" class="form-control" />
+                <span asp-validation-for="CourseLearningOutcome.Instructor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseLearningOutcome.CourseLearningOutcomeDescription" class="control-label"></label>
+                <input asp-for="CourseLearningOutcome.CourseLearningOutcomeDescription" class="form-control" />
+                <span asp-validation-for="CourseLearningOutcome.CourseLearningOutcomeDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseLearningOutcome.TotalStudents" class="control-label"></label>
+                <input asp-for="CourseLearningOutcome.TotalStudents" class="form-control" />
+                <span asp-validation-for="CourseLearningOutcome.TotalStudents" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseLearningOutcome.CompleteLevel" class="control-label"></label>
+                <input asp-for="CourseLearningOutcome.CompleteLevel" class="form-control" />
+                <span asp-validation-for="CourseLearningOutcome.CompleteLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseLearningOutcome.SatisfactoryLevel" class="control-label"></label>
+                <input asp-for="CourseLearningOutcome.SatisfactoryLevel" class="form-control" />
+                <span asp-validation-for="CourseLearningOutcome.SatisfactoryLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseLearningOutcome.NotMet" class="control-label"></label>
+                <input asp-for="CourseLearningOutcome.NotMet" class="form-control" />
+                <span asp-validation-for="CourseLearningOutcome.NotMet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseLearningOutcome.NotMeasurable" class="control-label"></label>
+                <input asp-for="CourseLearningOutcome.NotMeasurable" class="form-control" />
+                <span asp-validation-for="CourseLearningOutcome.NotMeasurable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
