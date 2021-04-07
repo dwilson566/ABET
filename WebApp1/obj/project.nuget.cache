@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nz3BgN1ipTWaPyNQQZT3SHbXQvYp+4Pr5iW8DvdX/mWkkhXk/6NDiESjjR+JfrKN8BOOpGJzCt5XwcKTAYV7jA==",
+  "dgSpecHash": "lYcX5OgTNuaijI6fkf62qYVchUO+7szqjZGIiwBgVtgzLc7pEqbAXJa/5b0qefO2G0HsBlKD5P+zu/dwJlWP3A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Coding Machine\\Documents\\CIDM4390\\Sprint3\\Sprint_3\\WebApp1\\WebApp1.csproj",
+  "projectFilePath": "C:\\Users\\Coding Machine\\Documents\\EmailAPI2\\sprint2\\WebApp1\\WebApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Coding Machine\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Coding Machine\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.4\\microsoft.aspnetcore.cryptography.internal.5.0.4.nupkg.sha512",

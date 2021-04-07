@@ -15,6 +15,9 @@ using WebApp1.Areas.Identity.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
+
 
 
 namespace WebApp1
@@ -25,6 +28,7 @@ namespace WebApp1
         {
             Configuration = configuration;
         }
+       
 
         public IConfiguration Configuration { get; }
 
@@ -37,6 +41,7 @@ namespace WebApp1
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddDefaultIdentity<WebApp1.Areas.Identity.Data.WebApp1User>(options => options.SignIn.RequireConfirmedAccount = true)
                .AddRoles<IdentityRole>()
+               
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
@@ -45,15 +50,29 @@ namespace WebApp1
             // using WebPWrecover.Services;
             services.AddTransient<IEmailSender, EmailSender>();
             services.Configure<AuthMessageSenderOptions>(Configuration);
-           
+
+
+           services.AddDbContext<OutcomesContext>(options =>
+                    options.UseSqlite(Configuration.GetConnectionString("OutcomesContext")));
+
                       
-            services.AddAuthorization();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+            }
+            );
            
             services.AddRazorPages(options => {
-                
+               
 				options.Conventions.AuthorizeFolder("/");
+                options.Conventions.AuthorizePage("/Private/Roles" , "AdminOnly");
+                 
 
 			});
+            
+
+			ConfigureRoles(services.BuildServiceProvider()).GetAwaiter().GetResult();
+            
 
             
 
@@ -88,5 +107,46 @@ namespace WebApp1
                 endpoints.MapRazorPages();
             });
         }
+
+       private async Task ConfigureRoles(ServiceProvider serviceProvider)
+		{
+
+			var roleMgr = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+			var exists = await roleMgr.RoleExistsAsync("Admin");
+			if (!exists)
+			{
+				var admin = new IdentityRole
+				{
+					Name = "Admin"
+				};
+				await roleMgr.CreateAsync(admin);
+			}
+
+			var adminRole = await roleMgr.FindByNameAsync("Admin");
+			var userMgr = serviceProvider.GetRequiredService<UserManager<WebApp1User>>();
+			var user = await userMgr.FindByEmailAsync("ealfaloujeh1@buffs.wtamu.edu");
+          
+            
+
+			if (user != null)
+			{
+
+				var isAdmin = await userMgr.IsInRoleAsync(user, "Admin");
+				if (!isAdmin)
+				{
+					await userMgr.AddToRoleAsync(user, "Admin");
+				}
+                var claims = await userMgr.GetClaimsAsync(user);
+                if (user.IsAdmin)
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, "Admin"));
+                }
+                
+				
+
+			}
+        }
+
+		
     }
 }

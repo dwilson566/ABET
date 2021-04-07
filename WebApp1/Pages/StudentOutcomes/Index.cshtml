@@ -1,0 +1,78 @@
+@page
+@model WebApp1.Pages.StudentOutcomes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentOutcome[0].Course)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentOutcome[0].Instructor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentOutcome[0].StudentOutcomeDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentOutcome[0].TotalStudents)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentOutcome[0].CompleteLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentOutcome[0].SatisfactoryLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentOutcome[0].NotMet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentOutcome[0].NotMeasurable)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.StudentOutcome) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Instructor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentOutcomeDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalStudents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompleteLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SatisfactoryLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotMet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotMeasurable)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

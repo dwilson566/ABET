@@ -12,6 +12,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using WebApp1.Areas.Identity.Data;
+using System.Security.Claims;
+using WebApp1;
+
 namespace WebApp1.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
@@ -82,6 +85,7 @@ namespace WebApp1.Areas.Identity.Pages.Account
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
@@ -96,6 +100,8 @@ namespace WebApp1.Areas.Identity.Pages.Account
                     _logger.LogWarning("User account locked out.");
                     return RedirectToPage("./Lockout");
                 }
+               
+               
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");

@@ -7884,11 +7884,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Coding Machine\\Documents\\CIDM4390\\Sprint3\\Sprint_3\\WebApp1\\WebApp1.csproj",
+      "projectUniqueName": "C:\\Users\\Coding Machine\\Documents\\EmailAPI2\\sprint2\\WebApp1\\WebApp1.csproj",
       "projectName": "WebApp1",
-      "projectPath": "C:\\Users\\Coding Machine\\Documents\\CIDM4390\\Sprint3\\Sprint_3\\WebApp1\\WebApp1.csproj",
+      "projectPath": "C:\\Users\\Coding Machine\\Documents\\EmailAPI2\\sprint2\\WebApp1\\WebApp1.csproj",
       "packagesPath": "C:\\Users\\Coding Machine\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Coding Machine\\Documents\\CIDM4390\\Sprint3\\Sprint_3\\WebApp1\\obj\\",
+      "outputPath": "C:\\Users\\Coding Machine\\Documents\\EmailAPI2\\sprint2\\WebApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Coding Machine\\AppData\\Roaming\\NuGet\\NuGet.Config"

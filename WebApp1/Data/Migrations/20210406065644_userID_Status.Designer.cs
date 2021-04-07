@@ -9,8 +9,8 @@ using WebApp1.Data;
 namespace WebApp1.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210319204159_CustomUserData")]
-    partial class CustomUserData
+    [Migration("20210406065644_userID_Status")]
+    partial class userID_Status
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -174,6 +174,9 @@ namespace WebApp1.Data.Migrations
 
                     b.Property<string>("FirstName")
                         .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");
