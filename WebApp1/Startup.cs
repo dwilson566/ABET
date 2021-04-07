@@ -44,13 +44,13 @@ namespace WebApp1
                
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-
             // requires
             // using Microsoft.AspNetCore.Identity.UI.Services;
             // using WebPWrecover.Services;
             services.AddTransient<IEmailSender, EmailSender>();
             services.Configure<AuthMessageSenderOptions>(Configuration);
 
+<<<<<<< HEAD
 
            services.AddDbContext<OutcomesContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("OutcomesContext")));
@@ -61,6 +61,9 @@ namespace WebApp1
                 options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
             }
             );
+=======
+            services.AddAuthorization();
+>>>>>>> b9bb2329eac1893a631f16227e0981cd0ffc93aa
            
             services.AddRazorPages(options => {
                
@@ -73,6 +76,9 @@ namespace WebApp1
 
 			ConfigureRoles(services.BuildServiceProvider()).GetAwaiter().GetResult();
             
+
+            services.AddDbContext<OutcomesContext>(options =>
+                    options.UseSqlite(Configuration.GetConnectionString("OutcomesContext")));
 
             
 

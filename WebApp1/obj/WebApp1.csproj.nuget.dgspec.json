@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Coding Machine\\Documents\\EmailAPI2\\sprint2\\WebApp1\\WebApp1.csproj": {}
   },
   "projects": {
@@ -12,9 +13,22 @@
         "projectPath": "C:\\Users\\Coding Machine\\Documents\\EmailAPI2\\sprint2\\WebApp1\\WebApp1.csproj",
         "packagesPath": "C:\\Users\\Coding Machine\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Coding Machine\\Documents\\EmailAPI2\\sprint2\\WebApp1\\obj\\",
+=======
+    "C:\\Users\\based\\Documents\\sprint2\\WebApp1\\WebApp1.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\based\\Documents\\sprint2\\WebApp1\\WebApp1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\based\\Documents\\sprint2\\WebApp1\\WebApp1.csproj",
+        "projectName": "WebApp1",
+        "projectPath": "C:\\Users\\based\\Documents\\sprint2\\WebApp1\\WebApp1.csproj",
+        "packagesPath": "C:\\Users\\based\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\based\\Documents\\sprint2\\WebApp1\\obj\\",
+>>>>>>> b9bb2329eac1893a631f16227e0981cd0ffc93aa
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Coding Machine\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\based\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -40,7 +54,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.0-*, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -58,25 +72,29 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.0-*, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.0-*, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.0-*, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.0-*, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[5.0.2, )"
+              "version": "[5.0.0-*, )"
             },
             "SendGrid": {
               "target": "Package",

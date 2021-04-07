@@ -16,4 +16,8 @@ namespace WebApp1.Models
         public int NotMet { get; set; }
         public int NotMeasurable { get; set; } 
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b9bb2329eac1893a631f16227e0981cd0ffc93aa
